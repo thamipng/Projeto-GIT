@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="port">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="modal">
+                <div class="logo">
+                    <img src="Sem Título-2.png" alt="logo" width="70px"
+                        height="70px">
+                </div>
+                <div class="modal-left-image">
+
+                </div>
+                <div class="modal-left">
+                    <div class="pergunta">
+                        <h1>Qual o setor que você atua?</h1>
+                    </div>
+                    <div class="vetor">
+                        <img src="vetor.png" alt="vetor" width="70%"
+                            height="70%">
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="radio-group">
+                        <input type="radio" id="tecnologia" name="fav_language">
+                        <label for="tecnologia">Trabalho com tecnologia e quero
+                            empreender</label><br>
+                    </div>
+
+                    <div class="radio-group ">
+                        <input type="radio" id="conta" name="fav_language">
+                        <label for="conta">Contabilidade</label><br>
+                    </div>
+
+                    <div class="radio-group">
+                        <input type="radio" id="consulta" name="fav_language">
+                        <label for="consulta">Consultoria Empresarial</label><br>
+                    </div>
+
+                    <div class="radio-group">
+                        <input type="radio" id="hard" name="fav_language">
+                        <label for="hard">Hardware</label><br>
+                    </div>
+
+                    <div class="radio-group">
+                        <input type="radio" id="mark" name="fav_language">
+                        <label for="mark">Marketing</label><br>
+                    </div>
+
+                    <div class="radio-group">
+                        <input type="radio" id="soft" name="fav_language">
+                        <label for="soft">Softwares</label><br>
+                    </div>
+
+                    <div class="radio-group">
+                        <input type="radio" id="out" name="fav_language">
+                        <label for="out">Outros</label><br>
+                    </div>
+
+                    <div class="botoes">
+                        <button class="botao-padrao">Salvar</button>
+                        <button class="botao-padrao" onclick="close_modal()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            const list = $(".radio-group").get();
+
+            $(".radio-group").click(function(){
+                for (let group in list) {
+                    let el = list[group];
+                    el.classList.remove("selected");
+                    let checked = el.childNodes[1].checked;
+                    if (checked)
+                        el.classList.add("selected");
+                }    
+            });
+            
+            const close_modal = function () {
+                $(".modal").css("display","none");
+            }
+
+            
+            
+        </script>
+    </body>
+</html>
